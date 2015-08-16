@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <act_window id="action_hr_need"
+        	name="HR Needs"
+        	res_model="hr.need"
+        	view_mode="tree,form" />
+
+        <menuitem id="menu_hr_training"
+        	name="HR Training"
+        	parent="hr.menu_hr_root"
+        	sequence="20" />
+
+        <menuitem id="menu_hr_need"
+        	name="HR Needs"
+        	parent="menu_hr_training"
+        	sequence="20"
+        	action="action_hr_need" />
+
+        <record id="view_form_hr_need" model="ir.ui.view">
+            <field name="name">HR Need Form</field>
+            <field name="model">hr.need</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+
+            	<form string="HR Needs">
+            		<header>
+            			<button name="need_inactive"
+            			        string="Inactive need"
+            			        type="object" />
+            		</header>
+            		<sheet>
+            			<group>
+	            			<group name="general" string="Data">
+			            	    <field name="name" class="oe_field_name"
+			            	       string="Name" placeholder="Name" />
+			        	        <field name="date" class="oe_field_date"
+			        	            string="Date" placeholder="Date" />
+	        	            </group>
+	        	            <group name="active" string="Active">
+			    	        	<field name="active" class="oe_field_active"
+			    	        	    string="Active" placeholder="Active" />
+	    	        	    </group>
+    	        		</group>
+    	        		<group>
+    	        		<field name="description" class="oe_field_description"
+    	        	    	string="Description" placeholder="Description" />
+    	        	    </group>
+    	        	</sheet>
+            	</form>
+                
+            </field>
+        </record>
+
+        <record id="view_tree_hr_need" model="ir.ui.view">
+            <field name="name">HR Needs Tree</field>
+            <field name="model">hr.need</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+
+                <tree string="HR Needs" colors="gray:active==False;green:active==True">
+                    <field name="name" />
+                    <field name="date" />
+                    <field name="active" />
+                </tree>
+
+            </field>
+        </record>
+
+        <record id="view_model_name_tree" model="ir.ui.view">
+            <field name="name">HR Needs Filter</field>
+            <field name="model">hr.need</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                
+                <search>
+                    <field name="name" />
+                    <field name="description" />
+                    <filter string="Active Needs"
+                        domain="[('active','=',True)]" />
+                    <filter string="Inactive Needs"
+                        domain="[('active','=',False)]" />
+                </search>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>
