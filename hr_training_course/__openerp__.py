@@ -21,15 +21,39 @@
 #
 ###############################################################################
 {
-	'name': 'Human Resource Training',
-	'description': 'Methology of training',
-	'author': 'Eduardo Rodríguez Crespo',
-	'depends': ['mail','hr'],
-	'category': 'HR',
-	'data': [
-		'views/hr_training.xml',
-		'security/ir.model.access.csv',
-	],
-	'application': False,
-	'installable': True
+    'name': 'HR Training Course',
+    'summary': '',
+    'version': '1.0',
+
+    'description': """
+Extend HR Training with course included.
+==============================================
+
+
+    """,
+
+    'author': 'Eduardo Rodríguez Crespo',
+    'maintainer': '',
+    'license': 'AGPL-3',
+    'category': 'Uncategorized',
+
+    'depends': [
+        'hr_training'
+    ],
+    'data': ['views/hr_course.xml',
+    ],
+    'demo': [
+    ],
+    'js': [
+    ],
+    'css': [
+    ],
+    'qweb': [
+    ],
+    'images': [
+    ],
+    'test': [
+    ],
+
+    'installable': True
 }

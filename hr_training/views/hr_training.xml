@@ -32,14 +32,16 @@
             			        type="object" />
             		</header>
             		<sheet>
-            			<group>
-	            			<group name="general" string="Data">
+            			<group string="Data">
+	            			<group>
 			            	    <field name="name" class="oe_field_name"
 			            	       string="Name" placeholder="Name" />
-			        	        <field name="date" class="oe_field_date"
-			        	            string="Date" placeholder="Date" />
+			        	        <field name="create_uid" class="oe_field_create_uid"
+			        	            string="Responsible" placeholder="Responsible" />
 	        	            </group>
-	        	            <group name="active" string="Active">
+	        	            <group>
+                                <field name="date" class="oe_field_date"
+                                    string="Date" placeholder="Date" />
 			    	        	<field name="active" class="oe_field_active"
 			    	        	    string="Active" placeholder="Active" />
 	    	        	    </group>
@@ -70,7 +72,7 @@
             </field>
         </record>
 
-        <record id="view_model_name_tree" model="ir.ui.view">
+        <record id="view_search_hr_need" model="ir.ui.view">
             <field name="name">HR Needs Filter</field>
             <field name="model">hr.need</field>
             <field name="priority" eval="16" />

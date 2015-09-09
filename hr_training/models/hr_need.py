@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from openerp import models, fields, api
-class hr_need (models.Model):
+class HRNeed(models.Model):
     """ Needs of training """
     _name = 'hr.need'
     _description = u'Every training need were located here'
